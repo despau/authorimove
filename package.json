@@ -4,7 +4,14 @@
   "description": "We app for loadboard movers",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch-sass": "node-sass sass/main.scss public/stylesheet/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch-sass",
+    "compile-sass": "node-sass sass/main.scss public/stylesheet/style.comp.css",
+    "concat-css": "concat -o public/stylesheet/style.concat.css public/stylesheet/icon-font.css public/stylesheet/style.comp.css",
+    "prefix-css": "postcss --use autoprefixer -b \"last 10 versions\" public/stylesheet/style.concat.css -o public/stylesheet/style.prefix.css",
+    "compress-css": "node-sass public/stylesheet/style.prefix.css public/stylesheet/style.css --output-style compressed",
+    "build-css": "npm-run-all compile-sass concat-css prefix-css compress-css"
   },
   "author": "romanegustin24",
   "license": "ISC",

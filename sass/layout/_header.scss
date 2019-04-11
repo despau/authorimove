@@ -1,0 +1,29 @@
+.header{
+    font-size: 1.4;
+    height: 7rem;
+    background-color: var(--color-primary-light);
+    border-bottom: 1px solid var(--color-grey-light);
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__logo{
+        //font-size: 1.2rem;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.2;
+        padding: 1rem;
+        color: var(--color-white);
+        &--main{
+            
+        }
+
+        &--sub{
+            margin-left: 1rem;
+            letter-spacing: .15rem;
+        }
+    }
+}

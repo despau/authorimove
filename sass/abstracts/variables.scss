@@ -1,0 +1,29 @@
+:root{
+    --color-primary: #1473E6;
+    --color-primary-light: #09BEFD;
+    --color-primary-dark: #0931FD;
+
+    --color-secondary-light: #3EB301;
+    --color-secondary-dark: #3A9908;
+
+    --color-tertiary: #EA662F;
+
+
+    --color-grey-light-1: #f7f7f7;
+    --color-grey-light-2: #eee;
+
+    //for texts
+    --color-grey-dark-1: #999;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #333;
+
+    --color-black: #000;
+    --color-white: #fff;
+
+    //font
+    --default-font-size: 1.6rem;
+
+    //some shadows
+    --shadow-dark: 0 2rem 6rem rgba(--color-black, .3);
+    --shadow-light: 0 2rem 5rem rgba(--color-black, .06);
+}

@@ -1,0 +1,62 @@
+:root {
+  --color-primary: #1473E6;
+  --color-primary-light: #09BEFD;
+  --color-primary-dark: #0931FD;
+  --color-secondary-light: #3EB301;
+  --color-secondary-dark: #3A9908;
+  --color-tertiary: #EA662F;
+  --color-grey-light-1: #f7f7f7;
+  --color-grey-light-2: #eee;
+  --color-grey-dark-1: #999;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #333;
+  --color-black: #000;
+  --color-white: #fff;
+  --default-font-size: 1.6rem;
+  --shadow-dark: 0 2rem 6rem rgba(--color-black, .3);
+  --shadow-light: 0 2rem 5rem rgba(--color-black, .06); }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+::selection {
+  background-color: --color-primary;
+  color: --color-white; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: --color-grey-dark-1;
+  min-height: 100vh; }
+
+.header {
+  font-size: 1.4;
+  height: 7rem;
+  background-color: var(--color-primary-light);
+  border-bottom: 1px solid var(--color-grey-light);
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .header__logo {
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+    padding: 1rem;
+    color: var(--color-white); }
+    .header__logo--sub {
+      margin-left: 1rem;
+      letter-spacing: .15rem; }

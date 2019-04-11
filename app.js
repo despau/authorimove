@@ -1,29 +1,31 @@
 var express     =   require("express"),
 app         =   express(),
+path        = require("path"),
 bodyParser  =   require("body-parser"),
 mongoose    =   require("mongoose"),
 passport    =   require("passport"),
 LocalStrategy = require("passport-local"),
 methodOverride = require("method-override"),
 Fake         = require("faker"),
-seedDB       = require("./seeds"),
-Load         = require("./models/load"),
-Truck         = require("./models/truck"),
-User        =   require("./models/loginUser");
+// seedDB       = require("./seeds"),
+// Load         = require("./models/load"),
+// Truck         = require("./models/truck"),
+    User        =   require("./models/user");
 
 //requiring routes
-var indexRoutes = require("./routes/index"),
-    carrierRoutes = require("./routes/carrier"),
-    brokerRoutes = require("./routes/broker");
-//have to add for trucks, companies, loads, etc..
+var indexRoutes = require("./routes/index");
+    // carrierRoutes = require("./routes/carrier"),
+    // brokerRoutes = require("./routes/broker");
 
-mongoose.connect("mongodb://localhost/autmov-3");
+
+mongoose.connect("mongodb://localhost/aulomov");
  
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use(express.static(__dirname + "/public"));
+
 app.use(methodOverride("_method"));
 //seedDB(); //seed the database
 
@@ -49,8 +51,8 @@ passport.deserializeUser(User.deserializeUser());
 
 //dictate the route paths
 app.use("/", indexRoutes);
-app.use("/carrier", carrierRoutes);
-app.use("/broker", brokerRoutes);
+// app.use("/carrier", carrierRoutes);
+// app.use("/broker", brokerRoutes);
 
 app.listen("3000", "localhost", ()=> {
     console.log("aulomov app has started successfully");

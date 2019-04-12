@@ -18,11 +18,11 @@ var indexRoutes = require("./routes/index");
     // brokerRoutes = require("./routes/broker");
 
 
-mongoose.connect("mongodb://localhost/aulomov");
+mongoose.connect("mongodb://localhost/authorimove");
  
 app.set("view engine", "ejs");
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(express.static(__dirname + "/public"));
 
@@ -55,5 +55,5 @@ app.use("/", indexRoutes);
 // app.use("/broker", brokerRoutes);
 
 app.listen("3000", "localhost", ()=> {
-    console.log("aulomov app has started successfully");
+    console.log("authorimove app has started successfully");
 });

@@ -12,9 +12,37 @@
   --color-grey-dark-3: #333;
   --color-black: #000;
   --color-white: #fff;
-  --default-font-size: 1.6rem;
+  --default-font-size: 1.5rem;
   --shadow-dark: 0 2rem 6rem rgba(--color-black, .3);
   --shadow-light: 0 2rem 5rem rgba(--color-black, .06); }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translate(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 *,
 *::after,
@@ -34,14 +62,72 @@ body {
   color: --color-white; }
 
 body {
-  min-width: 130rem;
   font-family: "Lato", sans-serif;
   font-weight: 400;
+  /* font-size: 16px; */
   line-height: 1.7;
-  color: --color-grey-dark-1; }
+  color: var(--color-grey-dark-1); }
+
+.heading-primary {
+  color: var(--color-white);
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #09BEFD, #0931FD);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.heading-tertiary {
+  font-size: var(--default-font-size);
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: var(--default-font-size); }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.home-loads-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: white; }
+  .home-loads-table__thead {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
 
 .header {
-  font-size: 1.4rem; }
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-grey-dark-3); }
   .header__top-nav {
     min-width: 60rem;
     background-color: var(--color-grey-dark-1); }
@@ -49,14 +135,15 @@ body {
       list-style: none;
       display: flex;
       flex-direction: row;
-      justify-content: flex-end; }
+      justify-content: center;
+      margin-right: -80rem; }
       .header__top-nav .menu-list__menu-item {
         color: white;
-        padding: .8rem 1rem .8rem 1rem; }
+        padding: 1rem 2rem; }
         .header__top-nav .menu-list__menu-item--menu-link {
           text-decoration: none; }
   .header__bot-nav {
-    background-color: var(--color-grey-light-1);
+    background-color: var(--color-white);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -79,23 +166,54 @@ body {
         .header__bot-nav__logo-box--logo p {
           display: flex;
           flex-direction: row;
-          justify-content: center; }
+          justify-content: space-between; }
           .header__bot-nav__logo-box--logo p span {
-            margin-right: .4rem;
-            color: white; }
+            padding: 1rem;
+            margin-right: .4rem; }
     .header__bot-nav .menu-list {
+      font-weight: 700;
       list-style: none;
       display: inline-flex;
-      margin-left: 3rem; }
+      margin-left: 9rem;
+      color: var(--color-grey-light-1); }
       .header__bot-nav .menu-list__menu-item {
         display: inline-block;
-        padding: .8rem 1rem .8rem 1rem; }
-        .header__bot-nav .menu-list__menu-item--menu-link {
-          text-decoration: none; }
+        padding: .8rem 1rem .8rem 1rem;
+        transition: all .2s;
+        color: var(--color-grey-light-1); }
+        .header__bot-nav .menu-list__menu-item--menu-link:link, .header__bot-nav .menu-list__menu-item--menu-link:visited {
+          text-decoration: none;
+          display: inline-block;
+          text-transform: uppercase; }
+        .header__bot-nav .menu-list__menu-item--menu-link:hover, .header__bot-nav .menu-list__menu-item--menu-link:active {
+          color: blue;
+          border-bottom: 1px solid orangered;
+          transform: translateY(-2px); }
         .header__bot-nav .menu-list__menu-item--menu-btn {
           background-color: var(--color-primary);
-          padding: 1rem 2rem;
+          padding: 2rem 2rem;
           border-radius: 5px;
-          color: var(--color-grey-light-1);
           text-align: center;
-          text-decoration: none; }
+          text-decoration: none;
+          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); }
+          .header__bot-nav .menu-list__menu-item--menu-btn:hover, .header__bot-nav .menu-list__menu-item--menu-btn:active {
+            color: blue;
+            background-color: var(--color-primary-light);
+            transform: scale(1.1); }
+
+.home-hero {
+  height: 70vh;
+  background-image: linear-gradient(to right bottom, rgba(9, 190, 253, 0.8), rgba(9, 49, 253, 0.8)), url("/img/snowmountain-truck.jpg");
+  padding: 8rem 0;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  align-content: center;
+  flex-direction: column; }
+  .home-hero h1 {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: white;
+    margin: 0 auto; }

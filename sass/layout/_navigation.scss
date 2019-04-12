@@ -1,20 +1,24 @@
 .header{
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-grey-dark-3);
 
     &__top-nav{
         min-width: 60rem;
         background-color: var(--color-grey-dark-1);
 
         & .menu-list{
+            
             list-style:none;
             display: flex;
             flex-direction: row;
-            justify-content:flex-end;
+            justify-content:center;
+            margin-right: -80rem;
 
             &__menu-item{
                 
                 color: white;
-                padding: .8rem 1rem .8rem 1rem;
+                padding: 1rem 2rem;
 
                 &--menu-link{
                     text-decoration: none;
@@ -24,7 +28,7 @@
     }
 
     &__bot-nav{
-        background-color: var(--color-grey-light-1);
+        background-color: var(--color-white);
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -52,35 +56,61 @@
                 & p{
                     display: flex;
                     flex-direction: row;
-                    justify-content: center;
+                    justify-content: space-between;
 
                     & span{
+                        padding: 1rem;
                         margin-right: .4rem;
-                        color: white;
+                        
                     }
                 }
             }
         }
 
         & .menu-list{
+            font-weight: 700;
             list-style: none;
             display: inline-flex;
-            margin-left: 3rem;
+            margin-left: 9rem;
+            color: var(--color-grey-light-1);
+
             &__menu-item{
                 display: inline-block;
                 padding: .8rem 1rem .8rem 1rem;
+                transition: all .2s;
+                color: var(--color-grey-light-1);
 
                 &--menu-link{
-                    text-decoration: none;
+                    &:link,
+                    &:visited {
+                        text-decoration: none;
+                        display: inline-block;
+                        text-transform: uppercase;
+                    }
+            
+                    &:hover,
+                    &:active {
+                        color: blue;
+                        border-bottom: 1px solid orangered;
+                        transform: translateY(-2px);
+                    }
                 }
-
                 &--menu-btn{
                     background-color: var(--color-primary);
-                    padding: 1rem 2rem;
+
+                    padding: 2rem 2rem;
                     border-radius: 5px;
-                    color: var(--color-grey-light-1);
+                    
                     text-align: center;
                     text-decoration: none;
+                    box-shadow: 0 1rem 3rem rgba(#000, .1);
+
+                    &:hover,
+                    &:active {
+                        color: blue;
+                        background-color: var(--color-primary-light);
+                        transform: scale(1.1);
+                    }
                 }
             }
         }

@@ -34,11 +34,68 @@ body {
   color: --color-white; }
 
 body {
-  min-width: 120rem;
+  min-width: 130rem;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   color: --color-grey-dark-1; }
 
-.main-header__top-nav {
-  background-color: green; }
+.header {
+  font-size: 1.4rem; }
+  .header__top-nav {
+    min-width: 60rem;
+    background-color: var(--color-grey-dark-1); }
+    .header__top-nav .menu-list {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end; }
+      .header__top-nav .menu-list__menu-item {
+        color: white;
+        padding: .8rem 1rem .8rem 1rem; }
+        .header__top-nav .menu-list__menu-item--menu-link {
+          text-decoration: none; }
+  .header__bot-nav {
+    background-color: var(--color-grey-light-1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1.5rem;
+    align-items: baseline; }
+    .header__bot-nav__logo-box {
+      display: block;
+      padding: .5rem;
+      height: 2.5rem;
+      width: 3rem;
+      text-decoration: none; }
+      .header__bot-nav__logo-box--logo {
+        width: 5rem;
+        height: 3rem;
+        display: flex;
+        justify-content: space-between; }
+        .header__bot-nav__logo-box--logo h1 {
+          color: white;
+          text-decoration: none; }
+        .header__bot-nav__logo-box--logo p {
+          display: flex;
+          flex-direction: row;
+          justify-content: center; }
+          .header__bot-nav__logo-box--logo p span {
+            margin-right: .4rem;
+            color: white; }
+    .header__bot-nav .menu-list {
+      list-style: none;
+      display: inline-flex;
+      margin-left: 3rem; }
+      .header__bot-nav .menu-list__menu-item {
+        display: inline-block;
+        padding: .8rem 1rem .8rem 1rem; }
+        .header__bot-nav .menu-list__menu-item--menu-link {
+          text-decoration: none; }
+        .header__bot-nav .menu-list__menu-item--menu-btn {
+          background-color: var(--color-primary);
+          padding: 1rem 2rem;
+          border-radius: 5px;
+          color: var(--color-grey-light-1);
+          text-align: center;
+          text-decoration: none; }

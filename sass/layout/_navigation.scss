@@ -1,3 +1,88 @@
-.main-header__top-nav{
-background-color: green;
+.header{
+    font-size: 1.4rem;
+
+    &__top-nav{
+        min-width: 60rem;
+        background-color: var(--color-grey-dark-1);
+
+        & .menu-list{
+            list-style:none;
+            display: flex;
+            flex-direction: row;
+            justify-content:flex-end;
+
+            &__menu-item{
+                
+                color: white;
+                padding: .8rem 1rem .8rem 1rem;
+
+                &--menu-link{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__bot-nav{
+        background-color: var(--color-grey-light-1);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1.5rem;
+        align-items: baseline;
+
+        &__logo-box{
+            display: block;
+            padding: .5rem;
+            height: 2.5rem;
+            width: 3rem;
+            text-decoration: none;
+
+            &--logo{
+                width: 5rem;
+                height: 3rem;
+                display: flex;
+                justify-content: space-between;
+
+                & h1{
+                    color: white;
+                    text-decoration: none;
+                }
+
+                & p{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+
+                    & span{
+                        margin-right: .4rem;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        & .menu-list{
+            list-style: none;
+            display: inline-flex;
+            margin-left: 3rem;
+            &__menu-item{
+                display: inline-block;
+                padding: .8rem 1rem .8rem 1rem;
+
+                &--menu-link{
+                    text-decoration: none;
+                }
+
+                &--menu-btn{
+                    background-color: var(--color-primary);
+                    padding: 1rem 2rem;
+                    border-radius: 5px;
+                    color: var(--color-grey-light-1);
+                    text-align: center;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
 }
